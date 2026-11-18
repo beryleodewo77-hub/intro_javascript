@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Functions</title>
+</head>
+<body>
+
+
+<script>
+    function greet() {
+        alert('hello there')
+    }
+
+    //greet()
+    function add(a, b) {
+        let result = a + b
+        return result
+    }
+
+    function greeting(name = 'Guest') {
+        alert(`hello ${name}`)
+    }
+
+    // greeting()
+    // greeting('Halima')
+    //alert(add(4, 7))
+
+    const multiply = function (x, y) {
+        return x * y
+    }
+    //alert(multiply(10,20))
+
+    //Arrow function
+    const areaCircle = (r) => 22 / 7 * r ** 2
+    //alert(areaCircle(7))
+
+    let scores = [56, 37, 88, 93, 92, 33, 89, 94]
+    let new_scores = scores.map((score) => score + 2)//used for modifying functions
+    //console.log(new_scores)
+
+    function addByTwo(value) {
+        return value + 2
+    }
+
+    //console.log(scores.map(addByTwo))
+
+    let result = scores.filter((score) => score > 65)
+    //console.log(result)
+
+   // console.log(scores.find((n) => n > 80))  //find the 1st score above 80
+
+
+    let new_result = scores.filter((x) => x < 80).map(s => s + 10)
+    console.log(new_result)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clicks</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <button class="btn btn-primary" id="btn_1">Click Me</button>
+    <button class="btn btn-info" id="btn_2">Click Me</button>
+    <input type="number" placeholder="Enter Weight" id="input">
+    <h1 id="heading"></h1>
+</div>
+
+
+<script>
+    const btn_1 = document.querySelector("#btn_1")//if using id use #+id
+    const heading = document.querySelector('#heading')
+
+    const myInput= document.querySelector("#input")
+    const btn_2 = document.querySelector("#btn_2")
+
+    btn_1.addEventListener('click', () => {
+        // alert('Clicked')
+        heading.textContent = "clicked"
+        heading.classList.add("text-danger", "text-center")
+    })
+    function squareListener(){
+        let weight = myInput.value
+        let result = weight * weight
+        heading.textContent = `weight squared is ${result}`
+
+    }
+    btn_2.addEventListener('click', squareListener)
+
+</script>
+</body>
+</html>
