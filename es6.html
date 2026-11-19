@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Es 6 Features</title>
+</head>
+<body>
+
+<script>
+
+    let x = 100 // ==var x =100
+    const PI = 22 / 7
+    //1.template literals`` when you use back_ticks
+    console.log(`${x} PI is  ${PI}`)
+    const add = (a, b) => a + b //== function add (a,b) return a*b
+    console.log(add(1, 2))
+
+    //2.Destructuring/ unpack values
+    const patient = {
+        name: 'Benson mime',
+        dob: '18/12/1999',
+        gender: 'M'
+    }
+    // let name = patient.name
+    // let dob = patient.dob
+    // let gender = patient.gender
+
+    const {name, dob, gender} = patient //destructuring
+    console.log(`patient name is ${name} and gender is ${gender}`)
+
+//array pack
+    let details = ["john", "Mariam"]
+    let [name1, name2] = details
+    console.log(details)
+
+    //3. default param
+    function divide(a, b = 2) {
+        console.log(a / b)
+    }
+    divide(15)
+    divide(15, 3)
+
+    function div(a, b, rounded = false) {
+        let res = a / b
+        if (rounded === true) {
+            return Math.round(res)
+        }
+        return res
+    }
+    let res1 = div(10, 2, true)
+    let res2 = div(10, 3)
+    console.log(res1, res2)
+
+    //4. spread operator allows you to add as many nums as possible
+    function betterAdd(...nums) {
+        let total = 0
+        for (let value of nums) {
+            total += value
+        }
+        return total
+    }
+    console.log(betterAdd(10, 20, 30, 20))
+
+//spread operator can also be used to merge  different arrays list as one or add more elements into the array
+    let people = ["john", "lee", "Doe"]
+    let others = ["Sammy", "Jack"]
+
+    let merged = [...people, ...others]
+    console.log(merged)
+
+    let data = [...people,"Hilda","Ahmed"]
+
+    //5.Modules--- files
+</script>
+</body>
+</html>
